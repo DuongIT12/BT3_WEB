@@ -12,6 +12,11 @@
    mariadb (3306), phpmyadmin (8080), nodered/node-red (1880), influxdb (8086), grafana/grafana (3000), nginx (80,443)
 
  ## BÀI LÀM
+ ## 🎯 Mục tiêu đề bài
+Xây dựng **Web thương mại điện tử dạng Single Page Application (SPA)**  
+toàn bộ giao diện sinh động bằng **JavaScript**,  
+xử lý backend qua **Node-RED**, lưu trữ bằng **MariaDB**,  
+và **thống kê bán hàng bằng Grafana**.
 ### 1. Cài đặt môi trường Linux  
 Enable WSL và cài Docker Desktop trên Windows  
 Mở PowerShell (Administrator) → chạy lệnh: **wsl --install**  
@@ -68,11 +73,42 @@ Giỏ hàng (cart)
 Hiển thị đơn hàng đã mua  
 Frontend sẽ gọi các API từ Node-RED qua đường dẫn /nodered/api/   
  ### các chức năng 
+ ## 🧱 Cấu trúc hệ thống
+ T3_WEB/
+│
+├── docker-compose.yml # Khởi tạo toàn bộ stack   
+├── db-init/   
+│ └── init.sql # Script tạo bảng & dữ liệu mẫu  
+├── nodered_data/ # Node-RED flow (API backend)   
+├── frontend   
+│ ├── index.html # Ứng dụng chính cho khách hàng   
+└── nginx/   
+└── nginx.conf # Reverse proxy frontend/backend    
+
  - login cho user, account được tạo trong database và đc 
 
   <img width="1859" height="716" alt="image" src="https://github.com/user-attachments/assets/10712e53-0b04-4bb6-823d-5a4a0e9a7818" />
 - dev quản trị bằng phpMyadmin
 <img width="1694" height="798" alt="image" src="https://github.com/user-attachments/assets/476d26b7-a951-446d-a5ed-36805e40c9b8" />
+
+
+**API Backend (Node-RED)**
+Endpoint	Chức năng    
+/api/register	Đăng ký người dùng  
+/api/login	Đăng nhập & lưu session   
+/api/logout	Đăng xuất  
+/api/products	Lấy danh sách sản phẩm  
+/api/categories	Lấy danh mục  
+/api/products_by_category/:id	Lấy sản phẩm theo nhóm  
+/api/search?q=	Tìm kiếm    
+/api/order	Đặt hàng     
+/api/orders	Đơn hàng của người dùng   
+/api/admin/orders	Quản trị đơn hàng   
+/api/admin/orders/update	Cập nhật trạng thái   
+/api/top_selling	Top bán chạy   
+
+
+
 **Có Top sản phẩm bán chạy**
 <img width="1886" height="207" alt="image" src="https://github.com/user-attachments/assets/8d7d3b49-7322-4f7d-a9a5-c59bc8581729" />
 - tạo một /api/top_selling với Node-red , → Liệt kê top 5 sản phẩm bán chạy nhất.
@@ -123,6 +159,12 @@ và xem số lượng đơn dựa trên biểu đồ
 
 
 
+
+
+👨‍💻 Tác giả
+Nguyễn Dương IT
+📧 Email: [nguyenduongg24ct@gmail.com]
+🌐 GitHub: https://github.com/DuongIT12/BT3_WEB
 
 
 
