@@ -4,7 +4,7 @@
 1. Cài đặt môi trường linux: SV chọn 1 trong các phương án
  - enable wsl: cài đặt docker desktop
  - enable wsl: cài đặt ubuntu
- - sử dụng Hyper-V: cài đặt ubuntu
+ - sử dụng Hyper-V: cài đặt ubuntuv
  - sử dụng VMware : cài đặt ubuntu
  - sử dụng Virtual Box: cài đặt ubuntu
 2. Cài đặt Docker (nếu dùng docker desktop trên windows thì nó có ngay)
